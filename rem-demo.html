@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动端响应式布局开发 不设置，以980宽度渲染，不足缩小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet" href="src/assets/reset.min.css">
+    <style>
+        html{
+            /* 相当于750px中，一个REM等于100px */
+            font-size: 100px; 
+        }
+        html,body{
+            height: 100%;
+            background: #f4f4f4
+        }
+
+        #root{
+            margin: 0 auto;
+            max-width: 750px;
+            height: 100%;
+            background: #fff;
+        }
+
+        .box{
+            width: 3.28rem;
+            height: 1.64rem;
+            line-height: 1.64rem;
+            text-align: center;
+            font-size: .4rem;
+            background: lightblue;
+        }
+    </style>
+    <title>REM练习</title>
+</head>
+<body>
+    <div id="root">
+        <div class="box">
+            东方锐智
+        </div>
+    </div>
+
+    <script>
+        // 计算当前设备下，REM和PX的换算比例
+        (function(){
+            const computed = () => {
+                //获取设备宽度
+                let html = document.documentElement
+                let deviceW = html.clientWidth
+                let designW = 750
+                if(deviceW >= designW){
+                    html.style.fontSize = '100px'
+                    return;
+                }
+                let ratio = deviceW * 100 / 750
+                html.style.fontSize = ratio + 'px'
+
+            };
+            computed();
+            window.addEventListener('resize',computed)
+        })();
+            
+    </script>
+    
+</body>
+</html>

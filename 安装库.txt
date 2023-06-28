@@ -1,0 +1,21 @@
+npm install @craco/craco
+npm install craco-less
+前面这两个如果报错，则采用yarn安装
+npm install less
+npm install styled-components@5.3.11
+npm install antd-mobile
+npm install react-router-dom@6.9.0   
+npm install redux
+npm install amfe-flexible@2.2.1
+npm install react-redux@8.0.5
+npm install redux-logger@3.0.6
+npm install redux-promise@0.6.0
+npm install redux-thunk
+
+redux-logger中间件提供一个生成器createLogger，可以生成日志中间件
+loggerredux-thunk 中间件改造store.dispatch，使得后者可以接受函数作为参数
+redux-promise 中间件使得store.dispatch方法可以接受 Promise 对象作为参数
+
+yarn add babel-plugin-styled-components-px2rem 在styled-components写样式时也能换算成rem
+yarn add keepalive-react-component 组件缓存
+npm i @babel/plugin-proposal-decorators
